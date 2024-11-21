@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Farming App{% endblock %}</title>
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>Smart Farm</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'add_farm' %}">Add Farm</a></li>
+                    <li><a href="{% url 'register' %}">View Farms</a></li>
+                    <li><a href="{% url 'upload_media' %}">Upload Media</a></li>
+                    <li><a href="{% url 'notifications' %}">Notifications</a></li>
+                </ul>
+                <div class="hamburger-menu" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% if suggestions %}
+        <section class="suggestions-section">
+            <h2>Farming Suggestions:</h2>
+            <div class="suggestions-content">
+                <p>{{ suggestions|safe }}</p>
+            </div>
+        </section>
+        {% endif %}
+        
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Farming App</p>
+    </footer>
+
+    <script>
+        // Toggle the mobile menu
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
