@@ -30,8 +30,8 @@ The Smart Farming App is a revolutionary platform that combines advanced AI tech
 
 ## **Technologies Used**  
 - **Backend**: Django (Python)  
-- **Frontend**: HTML, CSS, and Django Template Language  
-- **AI**: OpenAI Gemini Model Integration  
+- **Frontend**: HTML, CSS, javascript and Django Template Language  
+- **AI**: Gemini Model Integration  
 - **Database**: SQLite (for prototyping)  
 - **APIs**: OpenWeatherMap API for weather data  
 
@@ -64,10 +64,9 @@ The Smart Farming App is a revolutionary platform that combines advanced AI tech
    ```  
 
 4. **Set Environment Variables**:  
-   - Create a `.env` file in the root directory with the following keys:  
+   - Export you environment variables to set your API keys  
      ```
-     OPENAI_API_KEY=<your_openai_api_key>
-     WEATHER_API_KEY=<your_openweathermap_api_key>
+     
      ```  
 
 5. **Run Migrations**:  
